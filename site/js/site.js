@@ -56,7 +56,7 @@ function paint() {
     unitEl.textContent = "$PLTR stock";
   } else {
     prizeEl.textContent = state.feePotSol ?? "0.0";
-    unitEl.textContent = "SOL above reserve, paid as $PLTR stock";
+    unitEl.textContent = "paid as $PLTR stock";
   }
   feeEl.textContent = state.feePotSol == null ? "—" : `${state.feePotSol} SOL`;
   onHandEl.textContent = state.pltrOnHand || "0";

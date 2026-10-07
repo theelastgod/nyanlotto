@@ -97,7 +97,7 @@ h1 {
   margin: 0;
   font-family: "Press Start 2P", monospace;
   font-size: 12px;
-  line-height: 1.6;
+  line-height: 1.7;
   color: #ffe56a;
 }
 .card {
@@ -188,7 +188,7 @@ footer { padding: 10px 6vw 120px; color: var(--muted); }
   .board, .rules, .split { grid-template-columns: 1fr; }
   nav { display: none; }
   .hero { min-height: 42vh; }
-  .pair-banner { font-size: 10px; }
+  .pair-banner { font-size: 9px; }
   .split { margin: 0 6vw; }
   #volume { width: 72px; }
 }
