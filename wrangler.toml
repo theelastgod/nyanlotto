@@ -1,0 +1,28 @@
+name = "nyanlotto"
+main = "src/index.js"
+account_id = "b4d2c0859ed027cdf7f17626d660949e"
+compatibility_date = "2026-10-05"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+[assets]
+directory = "./site"
+binding = "ASSETS"
+run_worker_first = true
+
+[durable_objects]
+bindings = [{ name = "LOTTO", class_name = "Lotto" }]
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Lotto"]
+
+[triggers]
+crons = ["* * * * *"]
+
+[vars]
+NYAN_MINT = ""
+TREASURY_PUBKEY = ""
+SOLANA_RPC = "https://api.mainnet-beta.solana.com"
+WINDOW_SEC = "60"
+RESERVE_SOL = "0.05"

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NYANLOTTO ($NYAN) — last buyer takes $PLTR</title>
+  <meta name="description" content="Buy $NYAN and the 60-second clock resets. If nobody buys, the last buyer wins the pot in $PLTR. 0.05 SOL stays in the treasury.">
+  <link rel="icon" href="/media/coin.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div class="sky-photo" aria-hidden="true"></div>
+  <canvas id="stars" aria-hidden="true"></canvas>
+  <div class="flyers" id="flyers" aria-hidden="true"></div>
+
+  <header class="top">
+    <a class="brand" href="#board">
+      <img src="/media/coin.jpg" alt="">
+      <span>NYANLOTTO</span>
+    </a>
+    <nav>
+      <a href="#board">Dashboard</a>
+      <a href="#rules">Rules</a>
+      <a href="#reel">Art</a>
+    </nav>
+    <button class="play-top" id="playTop" type="button">Play the song</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="/media/wide.jpg">
+        <source src="/media/galaxy-push.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade"></div>
+      <div class="hero-copy">
+        <p class="pair">$NYAN / $PLTR</p>
+        <h1>NYANLOTTO</h1>
+        <p class="lede">Every buy resets a 60-second clock. If nobody buys, the last buyer takes the pot in $PLTR.</p>
+        <a class="cta" href="#board">Watch the clock</a>
+      </div>
+    </section>
+
+    <section class="board" id="board">
+      <article class="card clock-card">
+        <p class="kicker">Clock</p>
+        <div class="ring" id="ring" style="--p: 1">
+          <div class="ring-face">
+            <b id="clock">60.0</b>
+            <span id="clock-label">seconds</span>
+          </div>
+        </div>
+        <p class="phase" id="phase">Waiting for the first buy</p>
+      </article>
+
+      <article class="card pot-card">
+        <p class="kicker">Prize</p>
+        <h2 id="prize">—</h2>
+        <p class="prize-unit" id="prize-unit">$PLTR</p>
+        <dl class="stats">
+          <div><dt>Fee pot</dt><dd id="fee">—</dd></div>
+          <div><dt>Reserve</dt><dd>0.05 SOL</dd></div>
+          <div><dt>PLTRx on hand</dt><dd id="onhand">0</dd></div>
+          <div><dt>Treasury</dt><dd id="treasury">Not set</dd></div>
+        </dl>
+        <p class="fine" id="status-line">Payouts arm when the $NYAN mint and the treasury key are set. Until then the clock is only a preview.</p>
+      </article>
+
+      <article class="card buyer-card">
+        <p class="kicker">Last buyer</p>
+        <p class="buyer" id="buyer">Nobody yet</p>
+        <button class="wallet" id="connect" type="button">Connect wallet</button>
+        <p class="you" id="you"></p>
+        <img src="/media/close.jpg" alt="">
+      </article>
+    </section>
+
+    <section class="rules" id="rules">
+      <article>
+        <img src="/media/coin.jpg" alt="">
+        <h3>1. Buy $NYAN</h3>
+        <p>A buy spends SOL or $PLTR and receives $NYAN. That wallet becomes the last buyer.</p>
+      </article>
+      <article>
+        <img src="/media/loop.jpg" alt="">
+        <h3>2. The clock resets</h3>
+        <p>Every new buy starts the 60 seconds over. Buying again is how you keep the pot.</p>
+      </article>
+      <article>
+        <img src="/media/burst.jpg" alt="">
+        <h3>3. Last buyer wins $PLTR</h3>
+        <p>When the clock hits zero, the prize is PLTRx, Palantir xStock on Solana. 0.05 SOL stays in the treasury and is not part of the prize.</p>
+      </article>
+    </section>
+
+    <section class="split">
+      <video autoplay muted loop playsinline poster="/media/banner.jpg">
+        <source src="/media/pixel-loop.mp4" type="video/mp4">
+      </video>
+      <div>
+        <p class="kicker">The pair</p>
+        <h2>$NYAN paid out in $PLTR</h2>
+        <p>Creator fees land in the treasury as SOL. The draw swaps everything above the 0.05 SOL reserve into Palantir xStock and sends it to the last buyer. PLTRx already sitting in the treasury is sent first.</p>
+        <p class="mint"><span>PLTRx</span> <code id="pltr-mint">XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4</code></p>
+        <p class="mint"><span>$NYAN</span> <code id="nyan-mint">Mint not launched</code></p>
+      </div>
+      <img src="/media/story.jpg" alt="">
+    </section>
+
+    <section class="history-wrap">
+      <h2>Recent rounds</h2>
+      <ol id="history"><li class="empty">No rounds yet.</li></ol>
+    </section>
+
+    <section class="reel" id="reel">
+      <div class="track">
+        <img src="/media/banner.jpg" alt="">
+        <img src="/media/wide.jpg" alt="">
+        <img src="/media/nebula.jpg" alt="">
+        <img src="/media/burst.jpg" alt="">
+        <img src="/media/ribbon.jpg" alt="">
+        <img src="/media/clouds.jpg" alt="">
+        <img src="/media/cards.jpg" alt="">
+        <img src="/media/stars.jpg" alt="">
+        <img src="/media/nyan-galaxy.jpg" alt="">
+        <img src="/media/banner.jpg" alt="">
+        <img src="/media/wide.jpg" alt="">
+        <img src="/media/nebula.jpg" alt="">
+        <img src="/media/burst.jpg" alt="">
+        <img src="/media/ribbon.jpg" alt="">
+        <img src="/media/clouds.jpg" alt="">
+        <img src="/media/cards.jpg" alt="">
+        <img src="/media/stars.jpg" alt="">
+        <img src="/media/nyan-galaxy.jpg" alt="">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>NYANLOTTO pays the last $NYAN buyer in $PLTR (PLTRx). 0.05 SOL remains in the treasury. PLTRx tracks Palantir stock and is not a brokerage share. This page is not investment advice.</p>
+  </footer>
+
+  <div class="player" id="player">
+    <button id="play" type="button" aria-label="Play Nyan Cat Official">Play</button>
+    <div>
+      <b>Nyan Cat! [Official]</b>
+      <span id="time">0:00</span>
+    </div>
+    <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume">
+  </div>
+  <audio id="theme" src="/media/nyan.mp3" loop preload="auto"></audio>
+  <script src="/js/site.js"></script>
+</body>
+</html>
