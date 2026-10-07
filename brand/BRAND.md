@@ -8,8 +8,8 @@ NYANLOTTO is the lottery. $NYAN is the coin. The prize is $PLTR, paid as PLTRx (
 | --- | --- | --- |
 | `x_banner_1500x500.jpg` | 1500×500 | X header |
 | `dexscreener_600x200.jpg` | 600×200 | Dexscreener token banner (3:1) |
-| `trailer.mp4` | 1280×720, ~17s | Title, flight, rule, end card. Audio is the supplied Nyan Cat track. |
-| `card_title.jpg` `card_rule.jpg` `card_end.jpg` | 1280×720 | Trailer stills |
+| `trailer.mp4` | 1280×720, 18.5s | Fully animated: stars scroll, the cat bobs and flies across, the rainbow streams. Title, flight, rule, end card. Audio is the supplied Nyan Cat track. |
+| `card_title.jpg` `card_rule.jpg` `card_end.jpg` | 1280×720 | Trailer stills. Each one ends with nyanlotto.fun. |
 | `plates/` | source frames | Unlettered plates the banners were cropped from |
 
 ## Lines
@@ -20,7 +20,8 @@ NYANLOTTO is the lottery. $NYAN is the coin. The prize is $PLTR, paid as PLTRx (
 - 60 SECONDS
 - 0.05 SOL stays in the treasury
 - Paired with $PLTR
+- nyanlotto.fun
 
 The $NYAN mint is not set yet. Do not invent a contract address. The prize mint is PLTRx `XsoBhf2ufR8fTyNSjqfU71DYGaE6Z3SUGAidpzriAA4`.
 
-Live page: https://nyanlotto.wendellphillips.workers.dev
+Live page: https://nyanlotto.fun
