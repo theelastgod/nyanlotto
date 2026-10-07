@@ -53,10 +53,10 @@ function paint() {
   phaseEl.textContent = labels[state.phase] || state.phase;
   if (state.pltrQuote && state.pltrQuote !== "0") {
     prizeEl.textContent = state.pltrQuote;
-    unitEl.textContent = "$PLTR estimated";
+    unitEl.textContent = "$PLTR stock";
   } else {
     prizeEl.textContent = state.feePotSol ?? "0.0";
-    unitEl.textContent = "SOL waiting to swap into $PLTR";
+    unitEl.textContent = "SOL above reserve, paid as $PLTR stock";
   }
   feeEl.textContent = state.feePotSol == null ? "—" : `${state.feePotSol} SOL`;
   onHandEl.textContent = state.pltrOnHand || "0";
@@ -133,6 +133,19 @@ async function toggle() {
 }
 playButtons.forEach((button) => button.addEventListener("click", toggle));
 audio.volume = 0.8;
+function startSong() {
+  return audio.play().then(syncPlay);
+}
+startSong().catch(() => {
+  const unlock = () => {
+    startSong().finally(() => {
+      window.removeEventListener("pointerdown", unlock);
+      window.removeEventListener("keydown", unlock);
+    });
+  };
+  window.addEventListener("pointerdown", unlock);
+  window.addEventListener("keydown", unlock);
+});
 audio.addEventListener("timeupdate", () => {
   timeEl.textContent = formatTime(audio.currentTime);
 });
